@@ -1,3 +1,27 @@
+g1 = """Gramatica 1: Asociatividad izquierda
+E -> E op T | T
+T -> num
+op -> + | - | * | /
+"""
+
+g2 = """Gramatica 2: Asociatividad derecha
+E -> T op E | T
+T -> num
+op -> + | - | * | /
+"""
+
+g3 = """Gramatica 3: Precedencia normal
+E -> E + T | E - T | T
+T -> T * F | T / F | F
+F -> num | (E)
+"""
+
+g4 = """Gramatica 4: Precedencia inversa
+E -> E * T | E / T | T
+T -> T + F | T - F | F
+F -> num | (E)
+"""
+
 def izq(t):
     r=int(t[0]); i=1
     while i<len(t):
@@ -40,12 +64,17 @@ def prec(t,ops):
 
 def probar(e):
     t=e.split()
-    print("expr:",e)
-    print("izq:",izq(t))
-    print("der:",der(t))
-    print("normal:",prec(t,['*','/']))
-    print("inversa:",prec(t,['+','-']))
+    print("expresion:",e)
+    print("g1:",izq(t))
+    print("g2:",der(t))
+    print("g3:",prec(t,['*','/']))
+    print("g4:",prec(t,['+','-']))
     print()
+
+print(g1)
+print(g2)
+print(g3)
+print(g4)
 
 probar("4 - 3 - 2")
 probar("2 + 3 * 4")
