@@ -1,9 +1,10 @@
 import time
+import tracemalloc
 
 def entrada(n):
     t=['int','id']
     for _ in range(n-1):
-        t += [',','id']
+        t+= [',','id']
     t.append(';')
     return t
 
@@ -29,36 +30,38 @@ def cyk(t):
 
 def lineal(t):
     i=0
-    if t[i] not in ['int','float']:
-        return False
+    if t[i] not in ['int','float']: return False
     i+=1
-
-    if t[i]!='id':
-        return False
+    if t[i]!='id': return False
     i+=1
-
     while t[i]==',':
         i+=1
-        if t[i]!='id':
-            return False
+        if t[i]!='id': return False
         i+=1
-
     return t[i]==';'
+
+def medir(func, t):
+    tracemalloc.start()
+    a=time.time()
+
+    func(t)
+
+    b=time.time()
+    current, peak = tracemalloc.get_traced_memory()
+    tracemalloc.stop()
+
+    return b-a, peak
 
 def test(n):
     t=entrada(n)
 
-    a=time.time()
-    cyk(t)
-    b=time.time()
-
-    lineal(t)
-    c=time.time()
+    t_cyk, m_cyk = medir(cyk, t)
+    t_lin, m_lin = medir(lineal, t)
 
     print(f"{n} ids")
     print("cadena:", " ".join(t))
-    print("CYK:", b-a)
-    print("Lineal:", c-b)
+    print(f"CYK: tiempo={t_cyk:.6f}s memoria={m_cyk} bytes")
+    print(f"Lineal: tiempo={t_lin:.6f}s memoria={m_lin} bytes")
     print()
 
 for i in [5,10,20,40]:
