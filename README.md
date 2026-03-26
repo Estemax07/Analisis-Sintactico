@@ -19,13 +19,15 @@ F -> id | num | (E)
 
 Se usa una forma equivalente para poder programarlo y construir el arbol sintactico.
 
-### Cadena utilizada
-2+3*(4-5)
+### Cadenas utilizadas
+1. 2+3*4  
+2. 2+3-4  
+3. 2+3*(4-5)  
 
 ### Ejecucion
 python3 punto1.py
 
-El programa muestra el arbol en consola.
+El programa muestra el arbol en consola para cada cadena.
 
 ### Ejemplo de salida
 
@@ -64,9 +66,11 @@ python3 punto2.py
 
 ### Analisis
 
-Se observa que el algoritmo CYK incrementa su tiempo de ejecucion a medida que crece el tamaño de la cadena, ya que evalua combinaciones de subcadenas. Por otro lado, el analizador lineal recorre la entrada una sola vez, por lo que su tiempo se mantiene bajo incluso cuando aumenta la cantidad de identificadores.
+Se comparan ambos algoritmos en terminos de tiempo de ejecucion y uso de memoria.
 
-Esto evidencia que CYK tiene un mayor costo computacional, mientras que el analisis lineal resulta mas eficiente cuando la gramatica es adecuada para este tipo de procesamiento.
+Se observa que el algoritmo CYK incrementa su tiempo de ejecucion y consumo de memoria a medida que crece el tamaño de la entrada, ya que construye una tabla de analisis. En cambio, el analizador lineal recorre la cadena una sola vez, manteniendo tiempos y uso de memoria mucho menores.
+
+Esto demuestra que CYK es mas costoso (complejidad O(n³)), mientras que el analisis lineal es mas eficiente (O(n)) cuando la gramatica lo permite.
 
 ---
 
@@ -90,7 +94,7 @@ Se comparan resultados de una expresion segun:
 ### Ejecucion
 python3 punto3.py
 
-El programa muestra como cambian los resultados segun cada caso.
+El programa muestra como cambian los resultados segun cada modificacion a la gramatica aritmetica.
 
 ---
 
