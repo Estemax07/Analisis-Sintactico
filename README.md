@@ -41,6 +41,17 @@ python3 punto1.py
 
 El programa muestra el arbol en consola para cada cadena.
 
+### Visualizacion opcional
+
+Se puede generar una grafica del arbol usando Graphviz.
+
+Instalacion en macOS:
+
+brew install graphviz  
+pip install graphviz  
+
+Si no se instala, el programa funciona igual mostrando el arbol en texto.
+
 ---
 
 ## Punto 2
@@ -109,9 +120,3 @@ python3 punto2.py
 
 cd ../punto3  
 python3 punto3.py  
-
-## Archivos
-
-punto1.py  
-punto2.py  
-punto3.py  
