@@ -119,4 +119,4 @@ cd ../punto2
 python3 punto2.py  
 
 cd ../punto3  
-python3 punto3.py  
+python3 punto3.py
