@@ -68,10 +68,18 @@ def dibujar_graphviz(n):
     except:
         pass
 
-s=input("expr: ")
-a=P(tok(s)).E()
+pruebas = [
+    "2+3*4",
+    "2+3-4",
+    "2+3*(4-5)"
+]
 
-print("\nArbol:")
-a.p()
+for i, s in enumerate(pruebas, 1):
+    print("\n----------------------")
+    print(f"Cadena {i}: {s}")
+    print("Arbol:")
 
-dibujar_graphviz(a)
+    a = P(tok(s)).E()
+    a.p()
+
+    dibujar_graphviz(a)
