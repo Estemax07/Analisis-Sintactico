@@ -108,7 +108,7 @@ Se comparan resultados de una expresion segun:
 cd punto3  
 python3 punto3.py  
 
-El programa muestra como cambian los resultados segun cada caso.
+El programa muestra como cambian los resultados segun cada modificacion hecha a la gramatica aritmetia.
 
 ---
 
