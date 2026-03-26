@@ -65,9 +65,11 @@ En este punto se compara el algoritmo CYK con un parser generado usando ANTLR co
 
 La entrada consiste en expresiones aritmeticas como:
 
-2+3*4  
-2+3-4  
-2+3*(4-5)  
+```
+2+3*4
+2+3-4
+2+3*(4-5)
+```  
 
 ### Ejecucion
 
